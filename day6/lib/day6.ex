@@ -9,12 +9,11 @@ defmodule Day6 do
     |> Enum.map(fn [_ | x] -> x end)
     |> Enum.map(fn x -> Enum.map(x, &String.to_integer/1) end)
     |> Enum.zip()
-
-    # |> Enum.map(fn x -> get_zeroes(x) end)
-    # |> Enum.map(fn {x, y} -> {Float.ceil(x), Float.floor(y)} end)
-    # |> Enum.map(fn {x, y} -> y - x + 1 end)
-    # |> Enum.reduce(1, &Kernel.*/2)
-    # |> trunc()
+    |> Enum.map(fn x -> get_zeroes(x) end)
+    |> Enum.map(fn {x, y} -> {Float.ceil(x), Float.floor(y)} end)
+    |> Enum.map(fn {x, y} -> y - x + 1 end)
+    |> Enum.reduce(1, &Kernel.*/2)
+    |> trunc()
   end
 
   def part_two do
